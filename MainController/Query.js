@@ -30,7 +30,7 @@ function AddTask(){
 
     $.ajax({
         type : 'POST',
-        url : controller,
+        url : admin_controller,
         data : FormAddTask,
         dataType : 'json',
         async : false,

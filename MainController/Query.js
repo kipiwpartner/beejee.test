@@ -144,3 +144,28 @@ function LogOut(){
         }
     });
 }
+
+function Delete(id){
+
+    var FormDelete = new FormData();
+    FormDelete.append('action','delete');
+    FormDelete.append('id',id);
+
+    $.ajax({
+        type : 'POST',
+        url : admin_controller,
+        data : FormDelete,
+        dataType : 'json',
+        async : false,
+        cache : false,
+        contentType : false,
+        processData : false,
+        success : function (reponse){
+            Vue(reponse);
+        },
+        error: function (xhr, error) {
+            console.log(error);
+            console.log(xhr);
+        }
+    });
+}

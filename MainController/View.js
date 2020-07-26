@@ -19,6 +19,9 @@ var Vue=function(reponse){
         case "logout" :
             LogOut_View();
             break;
+        case "delete" :
+            Delete_View();
+            break;
 
     }
 };
@@ -68,5 +71,9 @@ function SaveEditTask_View(reponse){
 }
 
 function LogOut_View(){
+    location.reload();
+}
+
+function Delete_View(){
     location.reload();
 }

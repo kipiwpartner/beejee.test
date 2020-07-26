@@ -20,6 +20,9 @@ switch($_POST['action']){
     case 'logout':
         LogOut();
         break;
+    case 'delete':
+        Delete($db);
+        break;
 
 }
 
@@ -101,6 +104,14 @@ function LogOut(){
     session_destroy();
     global $reponse;
     $reponse['action'] = "logout";
+}
+
+function Delete($db){
+    global $reponse;
+    $reponse['action'] = "delete";
+
+    $SQL = 'DELETE FROM app_event WHERE id = ' . $_POST['id'];
+    $db->execute($SQL);
 }
 
 echo json_encode($reponse);

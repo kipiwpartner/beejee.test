@@ -145,11 +145,11 @@ function LogOut(){
     });
 }
 
-function Delete(id){
+function Delete(){
 
     var FormDelete = new FormData();
     FormDelete.append('action','delete');
-    FormDelete.append('id',id);
+    FormDelete.append('id',localStorage.getItem('id'));
 
     $.ajax({
         type : 'POST',

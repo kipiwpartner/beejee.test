@@ -77,3 +77,12 @@ function LogOut_View(){
 function Delete_View(){
     location.reload();
 }
+
+function ShowDelete_View(id){
+    $('#ModalDelete').modal('show');
+    localStorage.setItem("id", id);
+}
+
+function ShowExit_View(){
+    $('#ModalExit').modal('show');
+}

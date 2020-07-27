@@ -33,8 +33,8 @@
                 <td style="text-align: center">
                     {if $user_login == 1}
                         <i class="fa fa-pencil fa-2x" aria-hidden="true" onclick="Change({$key.id})"></i>
-                        <i class="fa fa-sign-out fa-2x" aria-hidden="true" onclick="LogOut()"></i>
-                        <i class="fa fa-trash fa-2x" aria-hidden="true" onclick="Delete({$key.id})"></i>
+                        <i class="fa fa-sign-out fa-2x" aria-hidden="true" onclick="ShowExit_View()"></i>
+                        <i class="fa fa-trash fa-2x" aria-hidden="true" onclick="ShowDelete_View({$key.id})"></i>
                     {else}
                         <i class="fa fa-sign-in fa-2x" aria-hidden="true" onclick="LoginOn()"></i>
                     {/if}

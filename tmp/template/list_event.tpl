@@ -1,5 +1,5 @@
 <h1>Задачи:</h1>
-<input type="button" value="Новая задача" class="btn btn-success" style="display: inline" onclick="AddNewTask()">
+<input type="button" value="Новая задача" id="show_modal_add_new_task" class="btn btn-success" style="display: inline">
 
 <div class="container-fluid" style="padding: 2%;">
     <div class="row" id="card-container"></div>

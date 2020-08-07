@@ -7,13 +7,17 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Задачник</title>
+
     <script src="https://use.fontawesome.com/316c23e35d.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="libs/jquery-3.4.1.min.js"></script>
     <script src="MainController/Query.js"></script>
     <script src="MainController/View.js"></script>
-    <script src="libs/jquery-3.4.1.min.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css"/>
+    <link rel="stylesheet" href="css/style_main.css">
 
 </head>
 <body onload="ListEvent();">

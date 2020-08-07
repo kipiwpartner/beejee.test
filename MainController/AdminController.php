@@ -76,7 +76,7 @@ function SaveTask($db){
 
     global $reponse;
     $reponse['action'] = "save_task";
-    $reponse['task_change'] = "nok";
+    $reponse['option'] = "nok";
 
     $SQL = 'SELECT * FROM app_event WHERE id = ' . $_POST['id'];
     $rs = $db->getAll($SQL);
@@ -88,6 +88,8 @@ function SaveTask($db){
         ($rs[0]['email'] != $_POST['email'])
         ||
         ($rs[0]['description'] != $_POST['description'])
+        ||
+        (isset($_SESSION['login']))
     ){
         $table = 'app_event';
         $record['status'] = $_POST['status'];
@@ -96,7 +98,7 @@ function SaveTask($db){
         $record['email'] = $_POST['email'];
         $record['description'] = $_POST['description'];
         $db->autoExecute($table, $record, 'UPDATE', 'id = '. $_POST['id']);
-        $reponse['task_change'] = "ok";
+        $reponse['option'] = "ok";
     }
 }
 
@@ -109,9 +111,13 @@ function LogOut(){
 function Delete($db){
     global $reponse;
     $reponse['action'] = "delete";
+    $reponse['option'] = "nok";
 
-    $SQL = 'DELETE FROM app_event WHERE id = ' . $_POST['id'];
-    $db->execute($SQL);
+    if (isset($_SESSION['login'])){
+        $SQL = 'DELETE FROM app_event WHERE id = ' . $_POST['id'];
+        $db->execute($SQL);
+        $reponse['option'] = "ok";
+    }
 }
 
 echo json_encode($reponse);

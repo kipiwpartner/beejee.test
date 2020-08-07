@@ -1,3 +1,15 @@
+$(document).on("click", "#show_modal_add_new_task", {query:'show_modal_add_new_task'}, SwitcherQuery );
+
+
+function SwitcherQuery(e) {
+    switch (e.data.query) {
+        case "show_modal_add_new_task":
+            $('#new_task').modal('show')
+            break;
+    }
+}
+
+
 var Vue=function(reponse){
 
     switch(reponse.action){
@@ -35,7 +47,7 @@ function LoginOn(){
 }
 
 function AddNewTask(){
-    $('#new_task').modal('show')
+
 }
 
 function ShowTaskEdit(id) {
